@@ -12,8 +12,7 @@ async function makeRequest(nickname) {
     const daysToBeAvailable = await page.evaluate(() => {
         document.querySelector('h4.text-center').innerText
     })
-    console.log(isAvailable ? "not available" : "will be available in " + daysToBeAvailable)
-    return isAvailable
+    return isAvailable ? "available" : "will be available in " + daysToBeAvailable
 }
 
 makeRequest("Your Nickname")
